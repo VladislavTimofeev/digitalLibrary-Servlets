@@ -15,6 +15,11 @@ Requests :
 - PUT /books/{id} — edit book by id
 - DELETE /books/{id} — delete book by id
 
+BookEntity :
+
+- title, numberOfPage, releaseYear
+
+
 #### Author :
 
 Requests : 
@@ -24,3 +29,7 @@ Requests :
 - GET /authors/{id} — get author by id
 - PUT /authors/{id} — edit author by id
 - DELETE /authors/{id} — delete author by id
+
+AuthorEntity :
+
+- firstName, lastName, dateOfBirth, country, 
