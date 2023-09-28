@@ -6,14 +6,14 @@
 
 #### Book :
 
-Administrator can add, delete, update and get books.
+We can add, delete, update and get books.
 
 Requests : 
 
-- POST /addbooks - create new book
+- POST /books - create new book
 - GET /books — get a list of books
-- PUT /upbooks/{id} — edit book by id
-- DELETE /delbooks/{id} — delete book by id
+- PUT /books/{id} — edit book by id
+- DELETE /books/{id} — delete book by id
 
 #### User :
 
@@ -26,7 +26,7 @@ Requests :
 
 Requests : 
 
-- POST /addusers — add new user
+- POST /users — add new user
 - GET /users — get a list of users
 - GET /users/{id} — get user by id
 - PUT /users/{id} — edit user by id
