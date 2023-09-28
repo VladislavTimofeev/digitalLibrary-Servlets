@@ -32,4 +32,10 @@ Requests :
 
 AuthorEntity :
 
-- firstName, lastName, dateOfBirth, country, 
+- firstName, lastName, dateOfBirth, country
+
+#### Many-to-Many for books and authors :
+
+#### BookAuthor :
+
+- bookId, authorId
