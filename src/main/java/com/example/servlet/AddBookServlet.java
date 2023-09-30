@@ -13,6 +13,7 @@ import java.io.IOException;
 public class AddBookServlet extends HttpServlet {
 
     private BookService bookService;
+
     public AddBookServlet() {
         this.bookService = new BookServiceImpl();
     }
@@ -20,6 +21,18 @@ public class AddBookServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        HttpSession session = req.getSession();
+
+        String numberOfPage = req.getParameter("numberOfPage");
+        String title = req.getParameter("title");
+        String releaseYear = req.getParameter("releaseYear");
+
+        session.setAttribute("numberOfPage", numberOfPage);
+        session.setAttribute("title", title);
+        session.setAttribute("releaseYear", releaseYear);
+
+        req.getRequestDispatcher("/WEB-INF/addbook.jsp").forward(req, resp);
+
     }
 
 }

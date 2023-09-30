@@ -8,16 +8,16 @@
 </head>
 <body>
 <h1>Now you can add your book!</h1>
-<form action="AddBook" method="POST">
-    ID: <input name="id" />
+<form action="addbook.jsp" method="POST">
+    ID: <input name="id"/>
     <br><br>
-    NumberOfPage: <input name="numberOfPage" />
+    NumberOfPage: <input name="numberOfPage"/>
     <br><br>
-    Title: <input name="title" />
+    Title: <input name="title"/>
     <br><br>
-    ReleaseYear: <input name="releaseYear" />
+    ReleaseYear: <input name="releaseYear"/>
     <br><br>
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Submit"/>
 </form>
 </body>
 </html>
