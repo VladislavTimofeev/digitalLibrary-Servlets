@@ -34,8 +34,8 @@ AuthorEntity :
 
 - firstName, lastName, dateOfBirth, country
 
-#### Many-to-Many for books and authors :
+#### Many-to-Many for books and authors : 
 
-#### BookAuthor :
+#### BookAuthorEntity :
 
 - bookId, authorId
