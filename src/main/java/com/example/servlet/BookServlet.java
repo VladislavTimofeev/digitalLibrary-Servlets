@@ -29,4 +29,27 @@ public class BookServlet extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/books.jsp").forward(req, resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        BookEntity book = new BookEntity();
+        HttpSession session = req.getSession();
+
+        long id = Long.parseLong(req.getParameter("id"));
+        int numberOfPage = Integer.parseInt(req.getParameter("numberOfPage"));
+        String title = req.getParameter("title");
+        int releaseYear = Integer.parseInt("releaseYear");
+
+        book.setId(id);
+        book.setNumberOfPage(numberOfPage);
+        book.setTitle(title);
+        book.setReleaseYear(releaseYear);
+
+        req.setAttribute("book",book);
+        req.getRequestDispatcher("/WEB-INF/books.jsp").forward(req, resp);
+
+    }
+
+
 }
