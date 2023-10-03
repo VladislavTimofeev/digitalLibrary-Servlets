@@ -7,7 +7,7 @@
     <title>Books</title>
 </head>
 <body>
-<h1>Hello Books</h1>
+<h1>Current books in system</h1>
 <c:forEach items="${books}" var="book">
     <tr>
         <td>
@@ -23,20 +23,7 @@
                 ${book.releaseYear}
         </td>
     </tr>
+    <br/>
 </c:forEach>
-<h1>Hello and now add your book</h1>
-<form method="POST" action='BookServlet' name="doPost">
-    Book ID : <input type="text" readonly="readonly" name="id"
-                     value="<c:out value="${book.id}" />" /> <br />
-    Number Of Page : <input
-        type="text" name="numberOfPage"
-        value="<c:out value="${book.numberOfPage}" />" /> <br />
-    Title : <input
-        type="text" name="title"
-        value="<c:out value="${book.title}" />" /> <br />
-    Release year : <input type="text" name="releaseYear"
-                          value="<c:out value="${book.releaseYear}" />" /> <br /> <input
-        type="submit" value="Submit" />
-</form>
 </body>
 </html>
