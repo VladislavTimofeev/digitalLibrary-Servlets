@@ -20,15 +20,7 @@
     <servlet-mapping>
         <servlet-name>BookServlet</servlet-name>
         <url-pattern>/books</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AddBookServlet</servlet-name>
-        <servlet-class>com.example.servlet.AddBookServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddBookServlet</servlet-name>
-        <url-pattern>/addbooks</url-pattern>
+        <url-pattern>/add_new_book</url-pattern>
     </servlet-mapping>
 
 
