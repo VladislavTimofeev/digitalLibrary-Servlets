@@ -1,29 +1,20 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=windows-1251;charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>Main Page</title>
+    <%@ include file="/WEB-INF/jsp/header.jsp" %>
+    <%@ include file="/css/button_style.html" %>
 </head>
-<body>
-<%@ include file = "/WEB-INF/jsp/header.jsp" %>
-<%@ include file = "/css/header.css" %>
-<header>
-    <h1>What you wanna do?</h1>
-    <nav>
-        <ul>
-            <li><a href="bookServlet?action=books">Show all books</a>
-            <li><a href="bookServlet?action=add_new_book">Add book</a>
-            <li><a href="authorServlet?action=authors">Show all authors</a>
-            <li><a href="authorServlet?action=add_new_author">Add author</a>
-        </ul>
-    </nav>
-</header>
-<%@ include file = "/WEB-INF/jsp/footer.jsp" %>
-<footer>
-    <p>Copyright ©
-        <time datetime="2023">2023</time>
-        By Engineering team
-    </p>
-    <address>New Mexico, USA.</address>
-</footer>
+<body style="background-color: gainsboro">
+
+<h1>What you wanna do?</h1>
+<div>
+    <a href="bookServlet?action=books">Show all books</a>
+    <a href="bookServlet?action=add_new_book">Add book</a>
+    <a href="authorServlet?action=authors">Show all authors</a>
+    <a href="authorServlet?action=add_new_author">Add author</a>
+</div>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>

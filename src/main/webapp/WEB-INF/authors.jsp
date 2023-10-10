@@ -2,29 +2,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<html>
-<head>
-    <title>Show All Authors</title>
-</head>
+<%@ include file="jsp/author_table_view.jsp" %>
 <body>
-<h1>Current authors in system</h1>
-<table border=1>
-    <thead>
-    <tr>
-        <th>Author Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${authors}" var="author">
+<div id="main">
+    <table class="timecard">
+        <caption>Authors</caption>
+        <thead>
         <tr>
-            <td><c:out value="${author.id}"/></td>
-            <td><c:out value="${author.firstName}"/></td>
-            <td><c:out value="${author.lastName}"/></td>
+            <th id="id">Author`s id</th>
+            <th id="firstName">First Name</th>
+            <th id="lastName">Last Name</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${authors}" var="author">
+            <tr>
+                <td><c:out value="${author.id}"/></td>
+                <td><c:out value="${author.firstName}"/></td>
+                <td><c:out value="${author.lastName}"/></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>
+

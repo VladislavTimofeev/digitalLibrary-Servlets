@@ -8,5 +8,5 @@ public interface AuthorService {
 
     List<AuthorEntity> getAll();
 
-    void add(String firstName, String lastName);
+    void add(AuthorEntity authorEntity);
 }

@@ -20,7 +20,8 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public void add(String firstName, String lastName) {
-        authorRepository.add(new AuthorEntity());
+    public void add(AuthorEntity authorEntity) {
+        authorRepository.add(authorEntity);
     }
+
 }

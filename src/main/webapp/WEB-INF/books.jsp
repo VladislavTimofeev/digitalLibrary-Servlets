@@ -3,31 +3,52 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
-<head>
-    <title>Show All Books</title>
-</head>
+<%@ include file="jsp/book_table_view.jsp" %>
 <body>
-<h1>Current books in system</h1>
-<table border=1>
-    <thead>
-    <tr>
-        <th>Book Id</th>
-        <th>Title</th>
-        <th>Number Of Page</th>
-        <th>Release Year</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${books}" var="book">
+<div id="main">
+    <table class="timecard">
+        <caption>Books</caption>
+        <thead>
         <tr>
-            <td><c:out value="${book.id}"/></td>
-            <td><c:out value="${book.title}"/></td>
-            <td><c:out value="${book.numberOfPage}"/></td>
-            <td><c:out value="${book.releaseYear}"/></td>
+            <th id="id">Book`s id</th>
+            <th id="title">Title</th>
+            <th id="numberOfPage">Number of page</th>
+            <th id="releaseYear">Release Year</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${books}" var="book">
+            <tr>
+                <td><c:out value="${book.id}"/></td>
+                <td><c:out value="${book.title}"/></td>
+                <td><c:out value="${book.numberOfPage}"/></td>
+                <td><c:out value="${book.releaseYear}"/></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+<%--<table border=1>--%>
+<%--    <thead>--%>
+<%--    <tr>--%>
+<%--        <th>Book Id</th>--%>
+<%--        <th>Title</th>--%>
+<%--        <th>Number Of Page</th>--%>
+<%--        <th>Release Year</th>--%>
+<%--    </tr>--%>
+<%--    </thead>--%>
+<%--    <tbody>--%>
+<%--    <c:forEach items="${books}" var="book">--%>
+<%--        <tr>--%>
+<%--            <td><c:out value="${book.id}"/></td>--%>
+<%--            <td><c:out value="${book.title}"/></td>--%>
+<%--            <td><c:out value="${book.numberOfPage}"/></td>--%>
+<%--            <td><c:out value="${book.releaseYear}"/></td>--%>
+<%--        </tr>--%>
+<%--    </c:forEach>--%>
+<%--    </tbody>--%>
+<%--</table>--%>
 
 
 <%--<c:forEach items="${books}" var="book">--%>
