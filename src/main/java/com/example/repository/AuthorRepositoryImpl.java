@@ -23,6 +23,8 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 
     @Override
     public boolean add(AuthorEntity authorEntity) {
+        long id = (long) (Math.random() * 51 + 6);
+        authorEntity.setId(id);
         return author.add(authorEntity);
     }
 }
