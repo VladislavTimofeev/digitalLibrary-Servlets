@@ -2,28 +2,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<html>
-<%@ include file="jsp/book_table_view.jsp" %>
+<%@ include file="jsp/author_table_view.jsp" %>
 <body style="background-color: gainsboro">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 <div id="main">
     <table class="timecard">
-        <caption>Books</caption>
+        <caption>Authors</caption>
         <thead>
         <tr>
-            <th id="id">Book`s id</th>
-            <th id="title">Title</th>
-            <th id="numberOfPage">Number of page</th>
-            <th id="releaseYear">Release Year</th>
+            <th id="id">Author`s id</th>
+            <th id="firstName">First Name</th>
+            <th id="lastName">Last Name</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${books}" var="book">
+        <c:forEach items="${authors}" var="author">
             <tr>
-                <td><c:out value="${book.id}"/></td>
-                <td><c:out value="${book.title}"/></td>
-                <td><c:out value="${book.numberOfPage}"/></td>
-                <td><c:out value="${book.releaseYear}"/></td>
+                <td><c:out value="${author.id}"/></td>
+                <td><c:out value="${author.firstName}"/></td>
+                <td><c:out value="${author.lastName}"/></td>
             </tr>
         </c:forEach>
         </tbody>
@@ -32,3 +29,4 @@
 <%@ include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>
+

@@ -23,6 +23,16 @@
         <url-pattern>/add_new_book</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AuthorServlet</servlet-name>
+        <servlet-class>com.example.servlet.AuthorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorServlet</servlet-name>
+        <url-pattern>/authors</url-pattern>
+        <url-pattern>/add_new_author</url-pattern>
+    </servlet-mapping>
+
 
 
     <!-- закоментил как пример возврата только jsp    >-->

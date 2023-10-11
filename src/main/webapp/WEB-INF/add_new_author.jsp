@@ -3,26 +3,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Adding book</title>
+    <title>Adding author</title>
 </head>
 <body style="background-color: gainsboro">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
-<h1>Hello and now add your book</h1>
+<h1>You can add a new author</h1>
 <form method="POST">
-    Book ID :
-    <input type="text" readonly="readonly" name="id" value="<c:out value="${book.id}"/>"/>
+    Author ID :
+    <input type="text" readonly="readonly" name="id" value="<c:out value="${author.id}"/>"/>
     <br/>
 
-    Number Of Page :
-    <input type="text" name="numberOfPage" value="<c:out value="${book.numberOfPage}" />"/>
+    First Name :
+    <input type="text" name="firstName" value="<c:out value="${author.firstName}" />"/>
     <br/>
 
-    Title :
-    <input type="text" name="title" value="<c:out value="${book.title}" />"/>
-    <br/>
-
-    Release year :
-    <input type="text" name="releaseYear" value="<c:out value="${book.releaseYear}" />"/>
+    Last Name :
+    <input type="text" name="lastName" value="<c:out value="${author.lastName}" />"/>
     <br/>
 
     <input type="submit" value="Submit"/>
@@ -30,3 +26,4 @@
 <%@ include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>
+
