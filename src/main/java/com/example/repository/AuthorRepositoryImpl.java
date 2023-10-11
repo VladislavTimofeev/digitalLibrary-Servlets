@@ -10,7 +10,6 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     private List<AuthorEntity> author = new ArrayList<>();
 
     public AuthorRepositoryImpl() {
-        long id = (long) (Math.random() * 51 + 6);
         AuthorEntity author1 = new AuthorEntity(1L, "Joanne", "Rowling");
         AuthorEntity author2 = new AuthorEntity(2L, "Dale", "Carnegie");
         author.add(author1);

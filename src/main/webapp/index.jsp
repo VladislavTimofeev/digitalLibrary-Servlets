@@ -3,7 +3,7 @@
 <head>
     <title>Main Page</title>
     <%@ include file="/WEB-INF/jsp/header.jsp" %>
-    <%@ include file="/css/button_style.html" %>
+    <%@ include file="/WEB-INF/css/button_style.html" %>
 </head>
 <body style="background-color: gainsboro">
 

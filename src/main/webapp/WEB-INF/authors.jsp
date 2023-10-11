@@ -3,7 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ include file="jsp/author_table_view.jsp" %>
-<body>
+<body style="background-color: gainsboro">
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 <div id="main">
     <table class="timecard">
         <caption>Authors</caption>

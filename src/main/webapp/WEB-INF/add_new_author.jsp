@@ -5,7 +5,8 @@
 <head>
     <title>Adding author</title>
 </head>
-<body>
+<body style="background-color: gainsboro">
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 <h1>You can add a new author</h1>
 <form method="POST">
     Author ID :

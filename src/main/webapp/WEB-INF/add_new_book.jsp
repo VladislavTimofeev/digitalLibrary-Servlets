@@ -5,7 +5,8 @@
 <head>
     <title>Adding book</title>
 </head>
-<body>
+<body style="background-color: gainsboro">
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 <h1>Hello and now add your book</h1>
 <form method="POST">
     Book ID :
