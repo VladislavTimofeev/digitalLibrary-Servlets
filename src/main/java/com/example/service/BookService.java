@@ -8,6 +8,6 @@ public interface BookService {
 
     List<BookEntity> getAll();
 
-    void add(int numberOfPage, String title, int releaseYear);
+    void add(BookEntity bookEntity);
 
 }

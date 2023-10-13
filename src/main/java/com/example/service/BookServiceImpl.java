@@ -20,7 +20,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void add(int numberOfPage, String title, int releaseYear) {
-        bookRepository.add(new BookEntity());
+    public void add(BookEntity bookEntity) {
+        bookRepository.add(bookEntity);
     }
+
 }

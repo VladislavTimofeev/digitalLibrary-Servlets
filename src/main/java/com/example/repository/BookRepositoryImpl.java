@@ -1,29 +1,29 @@
 package com.example.repository;
 
+import com.example.dao.BookDao;
+import com.example.dao.BookDaoImpl;
 import com.example.entity.BookEntity;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 public class BookRepositoryImpl implements BookRepository {
 
-    private List<BookEntity> books = new ArrayList<>();
+    private BookDao bookDao;
 
     public BookRepositoryImpl() {
-        BookEntity book = new BookEntity(1L, 333, "Harry", 2001);
-        BookEntity book2 = new BookEntity(2L, 345, "Henry", 2020);
-        books.add(book);
-        books.add(book2);
+        this.bookDao = new BookDaoImpl();
     }
 
     @Override
     public List<BookEntity> getAll() {
-        return books;
+        return this.bookDao.getAll();
     }
 
     @Override
     public boolean add(BookEntity bookEntity) {
-        return books.add(bookEntity);
+        this.bookDao.save(bookEntity);
+        return true;
     }
 
 }

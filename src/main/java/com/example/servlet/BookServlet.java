@@ -28,7 +28,7 @@ public class BookServlet extends HttpServlet {
 
         final String action = req.getParameter("action");
 
-        if (action.equals("add_new_book")) {
+        if (("add_new_book").equals(action)) {
             req.getRequestDispatcher("/WEB-INF/add_new_book.jsp").forward(req, resp);
         } else {
             HttpSession session = req.getSession();
@@ -46,18 +46,19 @@ public class BookServlet extends HttpServlet {
         BookEntity book = new BookEntity();
         HttpSession session = req.getSession();
 
-        long id = (long) (Math.random() * 51 + 6); //Long.parseLong(req.getParameter("id"));
         int numberOfPage = Integer.parseInt(req.getParameter("numberOfPage"));
         String title = req.getParameter("title");
         int releaseYear = Integer.parseInt(req.getParameter("releaseYear"));
 
-        book.setId(id);
         book.setNumberOfPage(numberOfPage);
         book.setTitle(title);
         book.setReleaseYear(releaseYear);
 
+        bookService.add(book);
+
         req.setAttribute("book", book);
-        req.getRequestDispatcher("/WEB-INF/add_new_book.jsp").forward(req, resp);
+        resp.sendRedirect("bookServlet?action=books");
+        //req.getRequestDispatcher("/WEB-INF/books.jsp").forward(req, resp);
 
     }
 
