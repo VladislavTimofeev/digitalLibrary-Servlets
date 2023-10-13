@@ -28,7 +28,7 @@ public class AuthorServlet extends HttpServlet {
 
         final String action = req.getParameter("action");
 
-        if (action.equals("add_new_author")) {
+        if (("add_new_author").equals(action)) {
             req.getRequestDispatcher("/WEB-INF/add_new_author.jsp").forward(req, resp);
         } else {
             HttpSession session = req.getSession();
@@ -46,16 +46,17 @@ public class AuthorServlet extends HttpServlet {
         AuthorEntity author = new AuthorEntity();
         HttpSession session = req.getSession();
 
-        long id = (long) (Math.random() * 51 + 6); //Long.parseLong(req.getParameter("id"));
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
 
-        author.setId(id);
         author.setFirstName(firstName);
         author.setLastName(lastName);
 
+        authorService.add(author);
+
         req.setAttribute("author", author);
-        req.getRequestDispatcher("/WEB-INF/add_new_author.jsp").forward(req, resp);
+        resp.sendRedirect("authorServlet?action=author");
+        //req.getRequestDispatcher("/WEB-INF/add_new_author.jsp").forward(req, resp);
 
     }
 

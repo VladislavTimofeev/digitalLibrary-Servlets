@@ -10,9 +10,9 @@ CREATE TABLE books
     release_year integer
 );
 
-INSERT INTO books
-VALUES (1,360,'Harry Pottttter',1999)
-
-SELECT 'id','number_of_pages','title','release_year' FROM books
-
-SELECT * FROM books
+CREATE TABLE authors
+(
+    id SERIAL PRIMARY KEY,
+    first_name varchar(40),
+    last_name varchar(40)
+);
