@@ -9,16 +9,12 @@
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 <h1>You can add a new author</h1>
 <form method="POST">
-    Author ID :
-    <input type="text" readonly="readonly" name="id" value="<c:out value="${author.id}"/>"/>
-    <br/>
-
     First Name :
-    <input type="text" name="firstName" value="<c:out value="${author.firstName}" />"/>
+    <input type="text" name="firstName" required="required" value="<c:out value="${author.firstName}" />"/>
     <br/>
 
     Last Name :
-    <input type="text" name="lastName" value="<c:out value="${author.lastName}" />"/>
+    <input type="text" name="lastName" required="required" value="<c:out value="${author.lastName}" />"/>
     <br/>
 
     <input type="submit" value="Submit"/>

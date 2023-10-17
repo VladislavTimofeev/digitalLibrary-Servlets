@@ -1,6 +1,7 @@
 package com.example.servlet;
 
 import com.example.entity.BookEntity;
+import com.example.exception.ServiceException;
 import com.example.service.BookService;
 import com.example.service.BookServiceImpl;
 
@@ -54,7 +55,12 @@ public class BookServlet extends HttpServlet {
         book.setTitle(title);
         book.setReleaseYear(releaseYear);
 
-        bookService.add(book);
+
+        try {
+            bookService.add(book);
+        } catch (ServiceException e) {
+            throw new RuntimeException(e);
+        }
 
         req.setAttribute("book", book);
         resp.sendRedirect("bookServlet?action=books");
