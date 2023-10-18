@@ -5,11 +5,16 @@ import com.example.exception.ServiceException;
 import com.example.repository.BookRepository;
 import com.example.repository.BookRepositoryImpl;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
 
+    private static final int MIN_TITLE_LENGTH = 3;
+    private static final int MIN_NUMBER_PAGES = 10;
     private final BookRepository bookRepository;
+    private static final int currentYear = LocalDate.now().getYear();
+    private static final int startYear = 1500;
 
     public BookServiceImpl() {
         this.bookRepository = new BookRepositoryImpl();
@@ -22,28 +27,20 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void add(BookEntity bookEntity) throws ServiceException {
-        validateBook(bookEntity);
+        validate(bookEntity);
         bookRepository.add(bookEntity);
     }
 
-    private void validateBook(BookEntity bookEntity) throws ServiceException {
+    public void validate(BookEntity bookEntity) throws ServiceException {
 
-//        if (isEmpty(bookEntity.getTitle())) {
-//            throw new ServiceException("Book title is required");
-//        }
-
-        if (bookEntity.getTitle() == null || bookEntity.getTitle().isEmpty() || bookEntity.getTitle().equals(" ")) {
-            return;
-        } else if (bookEntity.getTitle().length() <= 3) {
-            return;
-        }
-
-        if (bookEntity.getNumberOfPage() <= 10) {
-            return;
-        }
-
-        if (bookEntity.getReleaseYear() < 1500 || bookEntity.getReleaseYear() >= 2024) {
-            return;
+        if (isEmpty(bookEntity.getTitle())) {
+            throw new ServiceException("You need to add book title");
+        } else if (bookEntity.getTitle().length() <= MIN_TITLE_LENGTH) {
+            throw new ServiceException("Need at least three letters");
+        } else if (bookEntity.getNumberOfPage() <= MIN_NUMBER_PAGES) {
+            throw new ServiceException("You need more pages!");
+        } else if (bookEntity.getReleaseYear() < startYear || bookEntity.getReleaseYear() >= currentYear) {
+            throw new ServiceException("Invalid year");
         }
 
     }

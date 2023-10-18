@@ -1,6 +1,6 @@
 package com.example.exception;
 
-public class DAOException extends Exception {
+public class DAOException extends RuntimeException {
 
     public DAOException() {
         super();

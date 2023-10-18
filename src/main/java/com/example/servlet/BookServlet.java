@@ -55,11 +55,10 @@ public class BookServlet extends HttpServlet {
         book.setTitle(title);
         book.setReleaseYear(releaseYear);
 
-
         try {
             bookService.add(book);
         } catch (ServiceException e) {
-            throw new RuntimeException(e);
+            System.out.println("Invalid data");;
         }
 
         req.setAttribute("book", book);
