@@ -41,11 +41,9 @@ public class BookServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         BookEntity book = new BookEntity();
-        HttpSession session = req.getSession();
 
         int numberOfPage = Integer.parseInt(req.getParameter("numberOfPage"));
         String title = req.getParameter("title");
@@ -55,17 +53,19 @@ public class BookServlet extends HttpServlet {
         book.setTitle(title);
         book.setReleaseYear(releaseYear);
 
+        String page = "bookServlet?action=books";
+        String errorPage = "/WEB-INF/jsp/error.jsp";
+
         try {
             bookService.add(book);
+            req.setAttribute("book", book);
+
         } catch (ServiceException e) {
-            System.out.println("Invalid data");;
+            System.out.println("Invalid data");
+            //page = "/WEB-INF/jsp/error.jsp";
+            resp.sendRedirect(errorPage);
         }
-
-        req.setAttribute("book", book);
-        resp.sendRedirect("bookServlet?action=books");
-        //req.getRequestDispatcher("/WEB-INF/books.jsp").forward(req, resp);
-
+        resp.sendRedirect(page);
     }
-
 
 }
