@@ -1,30 +1,27 @@
 package com.example.repository;
 
+import com.example.dao.AuthorDao;
+import com.example.dao.AuthorDaoImpl;
 import com.example.entity.AuthorEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AuthorRepositoryImpl implements AuthorRepository {
 
-    private List<AuthorEntity> author = new ArrayList<>();
+    private AuthorDao authorDao;
 
     public AuthorRepositoryImpl() {
-        AuthorEntity author1 = new AuthorEntity(1L, "Joanne", "Rowling");
-        AuthorEntity author2 = new AuthorEntity(2L, "Dale", "Carnegie");
-        author.add(author1);
-        author.add(author2);
+        this.authorDao = new AuthorDaoImpl();
     }
 
     @Override
     public List<AuthorEntity> getAll() {
-        return author;
+        return this.authorDao.getAll();
     }
 
     @Override
     public boolean add(AuthorEntity authorEntity) {
-        long id = (long) (Math.random() * 51 + 6);
-        authorEntity.setId(id);
-        return author.add(authorEntity);
+        this.authorDao.save(authorEntity);
+        return true;
     }
 }

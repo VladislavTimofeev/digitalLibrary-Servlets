@@ -9,19 +9,19 @@
 <html>
 <head>
     <style type="text/css">
-        header {
-            background: #39b54a;
-            width: 100%;
-            height: 50px;
-            text-align: center;
-            color: #FFFFFF;
-            font-size: 24px;
-            padding-top: 40px;
-        }
+        <%@ include file="/WEB-INF/css/header_style.css" %>
+        <%@ include file="/WEB-INF/css/button_style.html" %>
     </style>
 </head>
 <body>
-<header>
+<header class="header">
+    <div>
+        <a href="mainServlet?action=index">Main page</a>
+        <a href="bookServlet?action=books">Show all books</a>
+        <a href="bookServlet?action=add_new_book">Add book</a>
+        <a href="authorServlet?action=authors">Show all authors</a>
+        <a href="authorServlet?action=add_new_author">Add author</a>
+    </div>
 </header>
 </body>
 </html>
